@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.justmili.underthestars.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+	"UnderTheStarsModRepairItemRecipeMixin"  ],
+  "injectors": {
+	"defaultRequire": 1
+  }
+}

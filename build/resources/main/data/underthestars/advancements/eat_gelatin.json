@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "item": "underthestars:kelp_gelatin"
+    },
+    "title": "Tastes like bones",
+    "description": "Eat kelp gelatine",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "eat_gelatin": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "underthestars:kelp_gelatin"
+          ]
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 2
+  },
+  "parent": "underthestars:craft_gelatine"
+}

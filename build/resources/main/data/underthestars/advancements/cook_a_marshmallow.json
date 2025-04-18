@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "item": "underthestars:cooked_marshmallow"
+    },
+    "title": "Sticky snack",
+    "description": "Cook a marshmallow",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "cook_a_marshmallow": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "underthestars:cooked_marshmallow"
+          ]
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 2
+  },
+  "parent": "underthestars:make_a_marshmallow"
+}
