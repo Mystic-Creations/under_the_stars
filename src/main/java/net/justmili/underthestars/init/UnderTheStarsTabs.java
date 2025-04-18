@@ -9,7 +9,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.Registry;
 
-import net.justmili.UnderTheStars.UnderTheStars;
+import net.justmili.underthestars.UnderTheStars;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 

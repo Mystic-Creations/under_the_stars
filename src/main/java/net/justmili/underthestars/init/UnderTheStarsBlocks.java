@@ -5,7 +5,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.Registry;
 
-import net.justmili.UnderTheStars.UnderTheStars;
+import net.justmili.underthestars.UnderTheStars;
 
 public class UnderTheStarsBlocks {
 	//public static Block BLOCK;

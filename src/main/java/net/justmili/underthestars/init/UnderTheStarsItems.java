@@ -14,7 +14,7 @@ import net.justmili.underthestars.item.KelpGelatin;
 import net.justmili.underthestars.item.CookedMarshmallowOnAStick;
 import net.justmili.underthestars.item.CookedMarshmallow;
 
-import net.justmili.UnderTheStars.UnderTheStars;
+import net.justmili.underthestars.UnderTheStars;
 
 public class UnderTheStarsItems {
 	public static Item KELP_GELATIN;

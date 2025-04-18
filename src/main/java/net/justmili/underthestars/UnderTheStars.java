@@ -1,4 +1,4 @@
-package net.justmili.UnderTheStars;
+package net.justmili.underthestars;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
