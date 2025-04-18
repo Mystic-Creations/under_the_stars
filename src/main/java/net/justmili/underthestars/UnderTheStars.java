@@ -4,6 +4,7 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
 import net.justmili.underthestars.init.UnderTheStarsTabs;
+import net.justmili.underthestars.init.UnderTheStarsBlocks;
 import net.justmili.underthestars.init.UnderTheStarsItems;
 
 import net.fabricmc.api.ModInitializer;
@@ -14,10 +15,10 @@ public class UnderTheStars implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		LOGGER.info("Initializing 'Under The Stars'... ");
+		LOGGER.info("Initializing Under The Stars... ");
 
 		UnderTheStarsTabs.load();
-
+		UnderTheStarsBlocks.load();
 		UnderTheStarsItems.load();
 
 	}
