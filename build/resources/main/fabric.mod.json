@@ -1,31 +1,33 @@
 {
   "schemaVersion": 1,
   "id": "underthestars",
-  "version": "1.2",
+  "version": "1.3",
   "name": "Under The Stars",
   "description": "A small and simple mod about camping!",
   "authors": [
-    "JustMili"
+    "Mystic Creations Team",
+    "JustDacia / Thanks for the bed template!"
   ],
   "contact": {
     "homepage": "https://modrinth.com/mod/under-the-stars",
     "sources": ""
   },
   "license": "CC-BY 4.0",
-  "icon": "assets/underthestars/icon.png",
+  "icon": "icon.png",
+  "accessWidener": "underthestars.accesswidener",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.justmili.underthestars.UnderthestarsMod"
+      "net.justmili.underthestars.UnderTheStars"
     ],
     "client": [
       "net.justmili.underthestars.ClientInit"
     ]
   },
   "depends": {
-    "fabricloader": ">=0.14.21",
+    "fabricloader": ">=0.16.10",
     "fabric": "*",
-    "minecraft": "~1.20",
+    "minecraft": "1.20.1",
     "java": ">=17"
   },
   "mixins": [

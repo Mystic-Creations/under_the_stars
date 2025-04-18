@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import com.google.common.collect.Lists;
 
 @Mixin(RepairItemRecipe.class)
-public abstract class UnderthestarsModRepairItemRecipeMixin {
+public abstract class UnderTheStarsRIRMixin {
 	@Inject(method = "assemble", at = @At("HEAD"), cancellable = true)
 	public void assemble(CraftingContainer craftingContainer, RegistryAccess registryAccess, CallbackInfoReturnable<ItemStack> cir) {
 		ItemStack itemStack3;

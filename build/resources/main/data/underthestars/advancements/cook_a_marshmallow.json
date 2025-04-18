@@ -3,15 +3,19 @@
     "icon": {
       "item": "underthestars:cooked_marshmallow"
     },
-    "title": "Sticky snack",
-    "description": "Cook a marshmallow",
+    "title": {
+      "translate": "advancements.cook_a_marshmallow.title"
+    },
+    "description": {
+      "translate": "advancements.cook_a_marshmallow.descr"
+    },
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
   "criteria": {
-    "cook_a_marshmallow": {
+    "cook_a_marshmallow_0": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {

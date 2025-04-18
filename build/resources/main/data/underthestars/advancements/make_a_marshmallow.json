@@ -3,15 +3,19 @@
     "icon": {
       "item": "underthestars:marshmallow"
     },
-    "title": "Squishy!",
-    "description": "Make a marshmallow",
+    "title": {
+      "translate": "advancements.make_a_marshmallow.title"
+    },
+    "description": {
+      "translate": "advancements.make_a_marshmallow.descr"
+    },
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
   "criteria": {
-    "make_a_marshmallow": {
+    "make_a_marshmallow_0": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [

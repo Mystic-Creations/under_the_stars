@@ -3,15 +3,19 @@
     "icon": {
       "item": "underthestars:kelp_gelatin"
     },
-    "title": "Like a Jelly",
-    "description": "Craft Kelp Gelatine",
+    "title": {
+      "translate": "advancements.craft_gelatine.title"
+    },
+    "description": {
+      "translate": "advancements.craft_gelatine.descr"
+    },
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
   "criteria": {
-    "craft_gelatine": {
+    "craft_gelatine_0": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [

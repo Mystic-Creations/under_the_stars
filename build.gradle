@@ -6,7 +6,7 @@ sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
 archivesBaseName = 'modid'
-version = '1.0.0'
+version = '1.3.0'
 group = 'com.yourname.modid'
 actualmodid = 'underthestars'
 
@@ -21,7 +21,7 @@ loom {
 dependencies {
     minecraft "com.mojang:minecraft:1.20.1"
     mappings loom.officialMojangMappings()
-    modImplementation "net.fabricmc:fabric-loader:0.14.21"
+    modImplementation "net.fabricmc:fabric-loader:0.16.10"
 
     //Fabric api
     modImplementation "net.fabricmc.fabric-api:fabric-api:0.83.1+1.20.1"

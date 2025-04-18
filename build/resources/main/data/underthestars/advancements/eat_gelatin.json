@@ -3,15 +3,19 @@
     "icon": {
       "item": "underthestars:kelp_gelatin"
     },
-    "title": "Tastes like bones",
-    "description": "Eat kelp gelatine",
+    "title": {
+      "translate": "advancements.eat_gelatin.title"
+    },
+    "description": {
+      "translate": "advancements.eat_gelatin.descr"
+    },
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
   "criteria": {
-    "eat_gelatin": {
+    "eat_gelatin_0": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {

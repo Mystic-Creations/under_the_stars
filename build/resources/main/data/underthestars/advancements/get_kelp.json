@@ -3,15 +3,19 @@
     "icon": {
       "item": "minecraft:kelp"
     },
-    "title": "Kelp on goin'",
-    "description": "Get Kelp",
+    "title": {
+      "translate": "advancements.get_kelp.title"
+    },
+    "description": {
+      "translate": "advancements.get_kelp.descr"
+    },
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
   "criteria": {
-    "get_kelp": {
+    "get_kelp_0": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [

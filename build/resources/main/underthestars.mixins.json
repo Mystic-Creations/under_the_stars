@@ -4,7 +4,7 @@
   "package": "net.justmili.underthestars.mixins",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-	"UnderthestarsModRepairItemRecipeMixin"  ],
+	"UnderTheStarsRIRMixin"  ],
   "injectors": {
 	"defaultRequire": 1
   }

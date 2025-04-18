@@ -9,23 +9,23 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.network.chat.Component;
 
-import net.justmili.underthestars.init.UnderthestarsModTabs;
+import net.justmili.underthestars.init.UnderTheStarsTabs;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 
 import java.util.List;
 
-public class MarshmallowItem extends Item {
-	public MarshmallowItem() {
-		super(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON).food((new FoodProperties.Builder()).nutrition(4).saturationMod(0.4f)
+public class CookedMarshmallow extends Item {
+	public CookedMarshmallow() {
+		super(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON).food((new FoodProperties.Builder()).nutrition(4).saturationMod(1f)
 
 				.build()));
-		ItemGroupEvents.modifyEntriesEvent(UnderthestarsModTabs.TAB_UnderTheStars).register(content -> content.accept(this));
+		ItemGroupEvents.modifyEntriesEvent(UnderTheStarsTabs.UNDER_THE_STARS).register(content -> content.accept(this));
 	}
 
 	@Override
 	public int getUseDuration(ItemStack itemstack) {
-		return 16;
+		return 32;
 	}
 
 	@Override

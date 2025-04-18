@@ -3,15 +3,19 @@
     "icon": {
       "item": "underthestars:marshmallow_on_a_stick"
     },
-    "title": "A snack on a stick",
-    "description": "Put a marshmallow on a stick",
+    "title": {
+      "translate": "advancements.put_a_marshmallow_on_a_stick.title"
+    },
+    "description": {
+      "translate": "advancements.put_a_marshmallow_on_a_stick.descr"
+    },
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
   "criteria": {
-    "put_a_marshmallow_on_a_stick": {
+    "put_a_marshmallow_on_a_stick_0": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
