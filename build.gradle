@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.4-SNAPSHOT'
+    id 'fabric-loom' version '1.10-SNAPSHOT'
 }
 
 sourceCompatibility = JavaVersion.VERSION_17
@@ -49,5 +49,3 @@ java {
 jar {
     from "LICENSE"
 }
-
-apply from: 'mcreator.gradle'

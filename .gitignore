@@ -1,3 +1,9 @@
+run/
+.idea/
+.vscode/
+.gradle/
+build/
+
 # Compiled class file
 *.class
 
@@ -23,7 +29,6 @@
 hs_err_pid*
 replay_pid*
 
-# folders
-run\
-build\
-.gradle\
+# macos
+.DS_Store
+.mcreator
