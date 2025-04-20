@@ -2,7 +2,7 @@
   "type": "minecraft:campfire_cooking",
   "category": "food",
   "experience": 1.5,
-  "cookingtime": 1200,
+  "cookingtime": 200,
   "ingredient": {
     "item": "underthestars:marshmallow"
   },

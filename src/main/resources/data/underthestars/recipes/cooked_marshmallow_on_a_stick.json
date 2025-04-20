@@ -1,7 +1,7 @@
 {
   "type": "minecraft:campfire_cooking",
   "category": "food",
-  "experience": 1.8,
+  "experience": 0.5,
   "cookingtime": 200,
   "ingredient": {
     "item": "underthestars:marshmallow_on_a_stick"
