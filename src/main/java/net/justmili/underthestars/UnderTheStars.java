@@ -11,7 +11,7 @@ import net.fabricmc.api.ModInitializer;
 
 public class UnderTheStars implements ModInitializer {
 	public static final Logger LOGGER = LogManager.getLogger();
-	public static final String MODID = "UnderTheStars";
+	public static final String MODID = "underthestars";
 
 	@Override
 	public void onInitialize() {
