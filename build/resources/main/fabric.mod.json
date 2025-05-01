@@ -10,7 +10,7 @@
   ],
   "contact": {
     "homepage": "https://modrinth.com/mod/under-the-stars",
-    "sources": ""
+    "issues": "https://github.com/JustMili0/under_the_stars/issues"
   },
   "license": "CC-BY 4.0",
   "icon": "icon.png",
@@ -19,9 +19,6 @@
   "entrypoints": {
     "main": [
       "net.justmili.underthestars.UnderTheStars"
-    ],
-    "client": [
-      "net.justmili.underthestars.ClientInit"
     ]
   },
   "depends": {

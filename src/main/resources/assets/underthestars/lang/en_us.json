@@ -1,7 +1,7 @@
 {
   "advancements.eat_gelatin.title": "Tastes like bones",
-  "item.under_the_stars.kelp_gelatin": "Kelp Gelatin",
-  "item.under_the_stars.marshmallow_on_a_stick": "Marshmallow on a Stick",
+  "item.underthestars.kelp_gelatin": "Kelp Gelatin",
+  "item.underthestars.marshmallow_on_a_stick": "Marshmallow on a Stick",
   "advancements.get_kelp.descr": "Get Kelp",
   "advancements.dry_a_piece_of_kelp.title": "Can I make sushi with this?",
   "advancements.cook_a_marshmallow_on_a_stick.title": "Camp cooking",
@@ -18,13 +18,13 @@
   "advancements.put_a_marshmallow_on_a_stick.title": "A snack on a stick",
   "advancements.make_a_marshmallow.descr": "Make a marshmallow",
   "item_group.underthestars.under_the_stars": "Under The Stars",
-  "item_group.under_the_stars.under_the_stars": "Under The Stars",
   "advancements.cook_a_marshmallow.descr": "Cook a marshmallow",
   "item.underthestars.cooked_marshmallow_on_a_stick": "Cooked Marshmallow on a Stick",
   "item.underthestars.marshmallow": "Marshmallow",
-  "item.under_the_stars.marshmallow": "Marshmallow",
-  "item.under_the_stars.cooked_marshmallow": "Cooked Marshmallow",
+  "item.underthestars.marshmallow": "Marshmallow",
+  "item.underthestars.cooked_marshmallow": "Cooked Marshmallow",
   "advancements.put_a_marshmallow_on_a_stick.descr": "Put a marshmallow on a stick",
   "advancements.make_a_marshmallow.title": "Squishy!",
-  "item.under_the_stars.cooked_marshmallow_on_a_stick": "Cooked Marshmallow on a Stick"
+  "item.underthestars.cooked_marshmallow_on_a_stick": "Cooked Marshmallow on a Stick",
+  "item.underthestars.chocolate_bar": "Chocolate Bar"
 }

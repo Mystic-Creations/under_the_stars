@@ -13,6 +13,7 @@ import net.justmili.underthestars.item.Marshmallow;
 import net.justmili.underthestars.item.KelpGelatin;
 import net.justmili.underthestars.item.CookedMarshmallowOnAStick;
 import net.justmili.underthestars.item.CookedMarshmallow;
+import net.justmili.underthestars.item.ChocolateBar;
 
 import net.justmili.underthestars.UnderTheStars;
 
@@ -22,6 +23,7 @@ public class UnderTheStarsItems {
 	public static Item COOKED_MARSHMALLOW;
 	public static Item MARSHMALLOW_ON_A_STICK;
 	public static Item COOKED_MARSHMALLOW_ON_A_STICK;
+	public static Item CHOCOLATE_BAR;
 
 	public static void load() {
 		KELP_GELATIN = register("kelp_gelatin", new KelpGelatin());
@@ -29,6 +31,7 @@ public class UnderTheStarsItems {
 		COOKED_MARSHMALLOW = register("cooked_marshmallow", new CookedMarshmallow());
 		MARSHMALLOW_ON_A_STICK = register("marshmallow_on_a_stick", new MarshmallowOnAStick());
 		COOKED_MARSHMALLOW_ON_A_STICK = register("cooked_marshmallow_on_a_stick", new CookedMarshmallowOnAStick());
+		CHOCOLATE_BAR = register("chocolate_bar", new ChocolateBar());
 	}
 
 	public static void clientLoad() {
