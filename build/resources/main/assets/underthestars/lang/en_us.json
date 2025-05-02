@@ -26,5 +26,7 @@
   "advancements.put_a_marshmallow_on_a_stick.descr": "Put a marshmallow on a stick",
   "advancements.make_a_marshmallow.title": "Squishy!",
   "item.underthestars.cooked_marshmallow_on_a_stick": "Cooked Marshmallow on a Stick",
-  "item.underthestars.chocolate_bar": "Chocolate Bar"
+  "item.underthestars.chocolate_bar": "Chocolate Bar",
+  "advancements.make_chocolate_bar.title": "Make a Chocolate Bar",
+  "advancements.make_chocolate_bar.desc": "Craft your very own Chocolate Bar!"
 }

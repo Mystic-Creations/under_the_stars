@@ -13,9 +13,9 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 
-public class ChocolateBar extends Item {
-	public ChocolateBar() {
-		super(new Item.Properties().stacksTo(16).rarity(Rarity.COMMON).food((new FoodProperties.Builder()).nutrition(8).saturationMod(0.10f)
+public class ChocolatePiece extends Item {
+	public ChocolatePiece() {
+		super(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON).food((new FoodProperties.Builder()).nutrition(1).saturationMod(0.1f)
 
 				.build()));
 		ItemGroupEvents.modifyEntriesEvent(UnderTheStarsTabs.UNDER_THE_STARS).register(content -> content.accept(this));
@@ -23,7 +23,7 @@ public class ChocolateBar extends Item {
 
 	@Override
 	public int getUseDuration(ItemStack itemstack) {
-		return 32;
+		return 8;
 	}
 
 	@Override
