@@ -1,0 +1,33 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "underthestars:chocolate_piece"
+        },
+        {
+            "item": "underthestars:chocolate_piece"
+        },
+        {
+            "item": "underthestars:chocolate_piece"
+        },
+        {
+            "item": "underthestars:chocolate_piece"
+        },
+        {
+            "item": "underthestars:chocolate_piece"
+        },
+        {
+            "item": "underthestars:chocolate_piece"
+        },
+        {
+            "item": "underthestars:chocolate_piece"
+        },
+        {
+            "item": "underthestars:chocolate_piece"
+        }
+    ],
+    "result": {
+        "item": "underthestars:chocolate_bar",
+        "count": 1
+    }
+}

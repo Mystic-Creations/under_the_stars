@@ -13,15 +13,31 @@
             {
               "processor_type": "minecraft:block_ignore",
               "blocks": [
-                {
-                  "Name": "minecraft:structure_block"
-                },
-                {
-                  "Name": "minecraft:jigsaw"
-                },
-                {
-                  "Name": "minecraft:structure_void"
-                }
+                { "Name": "minecraft:structure_block" },
+                { "Name": "minecraft:jigsaw" },
+                { "Name": "minecraft:structure_void" },
+                { "Name": "minecraft:air" }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "underthestars:abandoned_campsite_var2",
+        "projection": "rigid",
+        "processors": {
+          "processors": [
+            {
+              "processor_type": "minecraft:block_ignore",
+              "blocks": [
+                { "Name": "minecraft:structure_block" },
+                { "Name": "minecraft:jigsaw" },
+                { "Name": "minecraft:structure_void" },
+                { "Name": "minecraft:air" }
               ]
             }
           ]
