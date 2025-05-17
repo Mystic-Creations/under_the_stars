@@ -1,5 +1,6 @@
 package net.justmili.underthestars.block;
 
+import net.minecraft.world.level.block.*;
 import org.jetbrains.annotations.Nullable;
 
 import net.minecraft.core.BlockPos;
@@ -12,10 +13,6 @@ import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.BedBlock;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -35,23 +32,19 @@ public class WhiteSleepingBag extends BedBlock {
     public static final BooleanProperty OCCUPIED = BooleanProperty.create("occupied");
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
-    protected static final VoxelShape BASE = Block.box(0.0D, 3.0D, 0.0D, 16.0D, 9.0D, 16.0D);
-    protected static final VoxelShape LEG_NORTH_WEST = Block.box(0.0D, 0.0D, 0.0D, 3.0D, 3.0D, 3.0D);
-    protected static final VoxelShape LEG_SOUTH_WEST = Block.box(0.0D, 0.0D, 13.0D, 3.0D, 3.0D, 16.0D);
-    protected static final VoxelShape LEG_NORTH_EAST = Block.box(13.0D, 0.0D, 0.0D, 16.0D, 3.0D, 3.0D);
-    protected static final VoxelShape LEG_SOUTH_EAST = Block.box(13.0D, 0.0D, 13.0D, 16.0D, 3.0D, 16.0D);
+    protected static final VoxelShape BAG = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D);
 
-    protected static final VoxelShape NORTH_SHAPE = Shapes.or(BASE);
-    protected static final VoxelShape SOUTH_SHAPE = Shapes.or(BASE);
-    protected static final VoxelShape WEST_SHAPE = Shapes.or(BASE);
-    protected static final VoxelShape EAST_SHAPE = Shapes.or(BASE);
+    protected static final VoxelShape NORTH_PILLOW = Block.box(2.0D, 2.0D, 1.0D, 14.0D, 3.0D, 7.0D);
+    protected static final VoxelShape EAST_PILLOW = Block.box(9.0D, 2.0D, 2.0D, 15.0D, 3.0D, 14.0D);
+    protected static final VoxelShape SOUTH_PILLOW = Block.box(2.0D, 2.0D, 9.0D, 14.0D, 3.0D, 15.0D);
+    protected static final VoxelShape WEST_PILLOW = Block.box(1.0D, 2.0D, 2.0D, 7.0D, 3.0D, 14.0D);
 
     public WhiteSleepingBag() {
-        super(DyeColor.WHITE, BlockBehaviour.Properties.copy(Blocks.WHITE_BED));
+        super(DyeColor.WHITE, BlockBehaviour.Properties.copy(Blocks.WHITE_BED).sound(SoundType.WOOL));
         this.registerDefaultState(this.stateDefinition.any()
-            .setValue(PART, BedPart.FOOT)
-            .setValue(OCCUPIED, false)
-            .setValue(FACING, Direction.NORTH));
+                .setValue(PART, BedPart.FOOT)
+                .setValue(OCCUPIED, false)
+                .setValue(FACING, Direction.NORTH));
     }
 
     @Override
@@ -64,29 +57,55 @@ public class WhiteSleepingBag extends BedBlock {
         builder.add(FACING, PART, OCCUPIED);
     }
 
-@Override
-public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-    Direction direction = state.getValue(FACING);
-    BedPart part = state.getValue(PART);
-    VoxelShape baseBedShape;
+    @Override
+    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        Direction direction = state.getValue(FACING);
+        BedPart part = state.getValue(PART);
+        VoxelShape bagShape;
+        VoxelShape pillowShape;
 
-    switch (direction) {
-        case NORTH:
-            baseBedShape = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 3.0D, 16.0D); 
-            break;
-        case SOUTH:
-            baseBedShape = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 3.0D, 16.0D); 
-            break;
-        case WEST:
-            baseBedShape = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 3.0D, 16.0D); 
-            break;
-        default:
-            baseBedShape = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 3.0D, 16.0D); 
-            break;
+        if (part == BedPart.HEAD) {
+            switch (direction) {
+                case NORTH:
+                    bagShape = BAG;
+                    pillowShape = NORTH_PILLOW;
+                    break;
+                case SOUTH:
+                    bagShape = BAG;
+                    pillowShape = SOUTH_PILLOW;
+                    break;
+                case WEST:
+                    bagShape = BAG;
+                    pillowShape = WEST_PILLOW;
+                    break;
+                default:
+                    bagShape = BAG;
+                    pillowShape = EAST_PILLOW;
+                    break;
+            }
+        } else {
+            switch (direction) {
+                case NORTH:
+                    bagShape = BAG;
+                    pillowShape = Shapes.empty();
+                    break;
+                case SOUTH:
+                    bagShape = BAG;
+                    pillowShape = Shapes.empty();
+                    break;
+                case WEST:
+                    bagShape = BAG;
+                    pillowShape = Shapes.empty();
+                    break;
+                default:
+                    bagShape = BAG;
+                    pillowShape = Shapes.empty();
+                    break;
+            }
+        }
+        return Shapes.or(bagShape, pillowShape);
     }
 
-    return baseBedShape;
-}
     @Override
     public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
         if (!level.isClientSide) {

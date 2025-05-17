@@ -1,0 +1,41 @@
+{
+	"textures": {
+		"0": "underthestars:block/sleeping_bag/white",
+		"particle": "minecraft:block/white_wool"
+	},
+	"elements": [
+		{
+			"name": "bag",
+			"from": [0, 0, 0],
+			"to": [16, 2, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 0, 7]},
+			"faces": {
+				"north": {"uv": [0.5, 0, 4.5, 0.5], "rotation": 180, "texture": "#0"},
+				"east": {"uv": [4.5, 0.5, 5, 4.5], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [6, 0, 10, 0.5], "texture": "#0"},
+				"west": {"uv": [0, 0.5, 0.5, 4.5], "rotation": 270, "texture": "#0"},
+				"up": {"uv": [0.5, 0.5, 4.5, 4.5], "texture": "#0"},
+				"down": {"uv": [6, 0.5, 10, 4.5], "texture": "#0"}
+			}
+		},
+		{
+			"name": "pillow",
+			"from": [2, 2, 1],
+			"to": [14, 3, 7],
+			"rotation": {"angle": 0, "axis": "y", "origin": [2, 2, 1]},
+			"faces": {
+				"north": {"uv": [1, 0.75, 4, 1], "texture": "#0"},
+				"east": {"uv": [3.75, 0.75, 4, 2.25], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [1, 2, 4, 2.25], "texture": "#0"},
+				"west": {"uv": [1, 0.75, 1.25, 2.25], "rotation": 90, "texture": "#0"},
+				"up": {"uv": [1, 0.75, 4, 2.25], "texture": "#0"},
+				"down": {"uv": [6.5, 0.75, 9.5, 2.25], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 6, 0]
+		}
+	}
+}

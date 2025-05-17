@@ -1,12 +1,12 @@
 {
   "variants": {
-    "part=foot,facing=north": { "model": "underthestars:block/white_sleeping_bag_foot" },
-    "part=head,facing=north": { "model": "underthestars:block/white_sleeping_bag_head" },
-    "part=foot,facing=south": { "model": "underthestars:block/white_sleeping_bag_foot", "y": 180 },
-    "part=head,facing=south": { "model": "underthestars:block/white_sleeping_bag_head", "y": 180 },
-    "part=foot,facing=west": { "model": "underthestars:block/white_sleeping_bag_foot", "y": 270 },
-    "part=head,facing=west": { "model": "underthestars:block/white_sleeping_bag_head", "y": 270 },
-    "part=foot,facing=east": { "model": "underthestars:block/white_sleeping_bag_foot", "y": 90 },
-    "part=head,facing=east": { "model": "underthestars:block/white_sleeping_bag_head", "y": 90 }
+    "part=foot,facing=north": { "model": "underthestars:block/sleeping_bag/white_sleeping_bag_foot" },
+    "part=head,facing=north": { "model": "underthestars:block/sleeping_bag/white_sleeping_bag_head" },
+    "part=foot,facing=south": { "model": "underthestars:block/sleeping_bag/white_sleeping_bag_foot", "y": 180 },
+    "part=head,facing=south": { "model": "underthestars:block/sleeping_bag/white_sleeping_bag_head", "y": 180 },
+    "part=foot,facing=west": { "model": "underthestars:block/sleeping_bag/white_sleeping_bag_foot", "y": 270 },
+    "part=head,facing=west": { "model": "underthestars:block/sleeping_bag/white_sleeping_bag_head", "y": 270 },
+    "part=foot,facing=east": { "model": "underthestars:block/sleeping_bag/white_sleeping_bag_foot", "y": 90 },
+    "part=head,facing=east": { "model": "underthestars:block/sleeping_bag/white_sleeping_bag_head", "y": 90 }
   }
 }

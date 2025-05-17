@@ -1,0 +1,27 @@
+{
+	"textures": {
+		"0": "underthestars:block/sleeping_bag/white",
+		"particle": "minecraft:block/white_wool"
+	},
+	"elements": [
+		{
+			"name": "bag",
+			"from": [0, 0, 0],
+			"to": [16, 2, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 0, 7]},
+			"faces": {
+				"north": {"uv": [6, 8.75, 10, 9.25], "rotation": 180, "texture": "#0"},
+				"east": {"uv": [4.5, 4.75, 5, 8.75], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [0.5, 8.75, 4.5, 9.25], "rotation": 180, "texture": "#0"},
+				"west": {"uv": [0, 4.75, 0.5, 8.75], "rotation": 270, "texture": "#0"},
+				"up": {"uv": [0.5, 4.75, 4.5, 8.75], "texture": "#0"},
+				"down": {"uv": [6, 4.75, 10, 8.75], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 6, 0]
+		}
+	}
+}
