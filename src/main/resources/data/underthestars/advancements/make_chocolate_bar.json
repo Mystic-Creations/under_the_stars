@@ -4,10 +4,10 @@
       "item": "underthestars:chocolate_bar"
     },
     "title": {
-      "translate": "advancements.make_chocolate.title"
+      "translate": "advancements.make_chocolate.descr"
     },
     "description": {
-      "translate": "advancements.make_chocolate.descr"
+      "translate": "advancements.make_chocolate.title"
     },
     "frame": "task",
     "show_toast": true,
@@ -15,7 +15,7 @@
     "hidden": false
   },
   "criteria": {
-    "make_a_marshmallow_0": {
+    "make_a_chocolate_bar_0": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
@@ -33,10 +33,11 @@
     }
   },
   "rewards": {
-    "experience": 4,
+    "experience": 8,
     "recipes": [
       "underthestars:chocolate_bar",
       "underthestars:chocolate_piece"
     ]
-  }
+  },
+  "parent": "underthestars:root"
 }

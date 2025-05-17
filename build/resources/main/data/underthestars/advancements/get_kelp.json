@@ -15,13 +15,13 @@
     "hidden": false
   },
   "criteria": {
-    "get_kelp_0": {
+    "make_a_chocolate_bar_0": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:kelp"
+              "underthestars:kelp_gelatin"
             ],
             "count": {
               "min": 1,
@@ -33,10 +33,10 @@
     }
   },
   "rewards": {
-    "experience": 5,
+    "experience": 3,
     "recipes": [
       "underthestars:kelp_gelatin"
     ]
   },
-  "parent": "minecraft:husbandry/root"
+  "parent": "underthestars:root"
 }
