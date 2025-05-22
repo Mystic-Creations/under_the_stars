@@ -19,5 +19,6 @@ public class UnderTheStars implements ModInitializer {
         UnderTheStarsTabs.load();
         UnderTheStarsBlocks.load();
         UnderTheStarsItems.load();
+        UnderTheStarsProcedures.load();
     }
 }
