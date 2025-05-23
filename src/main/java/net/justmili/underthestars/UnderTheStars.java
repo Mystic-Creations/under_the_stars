@@ -7,6 +7,7 @@ import net.fabricmc.api.ModInitializer;
 import net.justmili.underthestars.init.UnderTheStarsBlocks;
 import net.justmili.underthestars.init.UnderTheStarsItems;
 import net.justmili.underthestars.init.UnderTheStarsTabs;
+import net.justmili.underthestars.init.UnderTheStarsProcedures;
 
 public class UnderTheStars implements ModInitializer {
     public static final Logger LOGGER = LogManager.getLogger();
