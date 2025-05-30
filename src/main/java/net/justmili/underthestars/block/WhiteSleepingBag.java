@@ -1,10 +1,12 @@
+  // still no items drop
 package net.justmili.underthestars.block;
 
-import net.minecraft.world.level.block.*;
 import org.jetbrains.annotations.Nullable;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
@@ -13,6 +15,11 @@ import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BedBlock;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -33,7 +40,6 @@ public class WhiteSleepingBag extends BedBlock {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
     protected static final VoxelShape BAG = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D);
-
     protected static final VoxelShape NORTH_PILLOW = Block.box(2.0D, 2.0D, 1.0D, 14.0D, 3.0D, 7.0D);
     protected static final VoxelShape EAST_PILLOW = Block.box(9.0D, 2.0D, 2.0D, 15.0D, 3.0D, 14.0D);
     protected static final VoxelShape SOUTH_PILLOW = Block.box(2.0D, 2.0D, 9.0D, 14.0D, 3.0D, 15.0D);
@@ -61,48 +67,18 @@ public class WhiteSleepingBag extends BedBlock {
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         Direction direction = state.getValue(FACING);
         BedPart part = state.getValue(PART);
-        VoxelShape bagShape;
-        VoxelShape pillowShape;
+        VoxelShape bagShape = BAG;
+        VoxelShape pillowShape = Shapes.empty();
 
         if (part == BedPart.HEAD) {
             switch (direction) {
-                case NORTH:
-                    bagShape = BAG;
-                    pillowShape = NORTH_PILLOW;
-                    break;
-                case SOUTH:
-                    bagShape = BAG;
-                    pillowShape = SOUTH_PILLOW;
-                    break;
-                case WEST:
-                    bagShape = BAG;
-                    pillowShape = WEST_PILLOW;
-                    break;
-                default:
-                    bagShape = BAG;
-                    pillowShape = EAST_PILLOW;
-                    break;
-            }
-        } else {
-            switch (direction) {
-                case NORTH:
-                    bagShape = BAG;
-                    pillowShape = Shapes.empty();
-                    break;
-                case SOUTH:
-                    bagShape = BAG;
-                    pillowShape = Shapes.empty();
-                    break;
-                case WEST:
-                    bagShape = BAG;
-                    pillowShape = Shapes.empty();
-                    break;
-                default:
-                    bagShape = BAG;
-                    pillowShape = Shapes.empty();
-                    break;
+                case NORTH -> pillowShape = NORTH_PILLOW;
+                case SOUTH -> pillowShape = SOUTH_PILLOW;
+                case WEST -> pillowShape = WEST_PILLOW;
+                case EAST -> pillowShape = EAST_PILLOW;
             }
         }
+
         return Shapes.or(bagShape, pillowShape);
     }
 
@@ -116,24 +92,53 @@ public class WhiteSleepingBag extends BedBlock {
         }
     }
 
-    @Override
-    public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player,
-                                 InteractionHand hand, BlockHitResult hit) {
-        if (!world.isClientSide && player.isShiftKeyDown()) {
-            Direction direction = state.getValue(FACING);
-            BedPart part = state.getValue(PART);
-            BlockPos footPos = (part == BedPart.FOOT) ? pos : pos.relative(direction.getOpposite());
-            BlockPos headPos = footPos.relative(direction);
-
-            world.removeBlock(headPos, false);
-            world.removeBlock(footPos, false);
-
-            // Add to player inventory instead of dropping
-            ItemStack bagStack = new ItemStack(this);
-            player.getInventory().add(bagStack);
-
-            return InteractionResult.SUCCESS;
-        }
-        return super.use(state, world, pos, player, hand, hit);
+@Override
+public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player,
+                             InteractionHand hand, BlockHitResult hit) {
+    if (world.isClientSide) {
+        return InteractionResult.SUCCESS;
     }
+
+    if (player.isShiftKeyDown()) {
+        Direction direction = state.getValue(FACING);
+        BedPart part = state.getValue(PART);
+        BlockPos footPos = (part == BedPart.FOOT) ? pos : pos.relative(direction.getOpposite());
+        BlockPos headPos = footPos.relative(direction);
+
+        world.removeBlock(headPos, false);
+        world.removeBlock(footPos, false);
+
+        ItemStack bagStack = new ItemStack(this);
+        player.getInventory().add(bagStack);
+
+        return InteractionResult.SUCCESS;
+    }
+
+    Direction direction = state.getValue(FACING);
+    BlockPos bedPos = state.getValue(PART) == BedPart.HEAD ? pos.relative(direction.getOpposite()) : pos;
+
+    if (!world.dimensionType().natural()) {
+        world.removeBlock(bedPos, false);
+        world.removeBlock(bedPos.relative(direction), false);
+        world.explode(null, bedPos.getX() + 0.5, bedPos.getY() + 0.5, bedPos.getZ() + 0.5, 5.0F, Level.ExplosionInteraction.BLOCK);
+        return InteractionResult.SUCCESS;
+    }
+
+    if (state.getValue(OCCUPIED)) {
+        player.displayClientMessage(Component.translatable("block.minecraft.bed.occupied"), true);
+        return InteractionResult.SUCCESS;
+    }
+
+    var result = player.startSleepInBed(bedPos);
+    if (result.left().isPresent()) {
+        Component message = result.left().get().getMessage();
+        player.displayClientMessage(message, true);
+    } else {
+        if (player instanceof ServerPlayer serverPlayer) {
+            serverPlayer.setRespawnPosition(world.dimension(), null, 0.0F, false, false);
+        }
+    }
+
+    return InteractionResult.SUCCESS;
+ }
 }

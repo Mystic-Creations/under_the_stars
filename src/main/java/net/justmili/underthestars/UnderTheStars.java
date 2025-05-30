@@ -7,7 +7,7 @@ import net.fabricmc.api.ModInitializer;
 import net.justmili.underthestars.init.UnderTheStarsBlocks;
 import net.justmili.underthestars.init.UnderTheStarsItems;
 import net.justmili.underthestars.init.UnderTheStarsTabs;
-import net.justmili.underthestars.init.UnderTheStarsProcedures;
+import net.justmili.underthestars.procedures.CampfireHealingHandler;
 
 public class UnderTheStars implements ModInitializer {
     public static final Logger LOGGER = LogManager.getLogger();
@@ -15,11 +15,12 @@ public class UnderTheStars implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        LOGGER.info("Initializing Under The Stars... ");
+        LOGGER.info("Initializing Under The Stars...");
 
         UnderTheStarsTabs.load();
         UnderTheStarsBlocks.load();
         UnderTheStarsItems.load();
-        UnderTheStarsProcedures.load();
+
+        CampfireHealingHandler.register();
     }
 }

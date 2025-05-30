@@ -46,6 +46,18 @@
           "quality": 4
         }
       ]
+    },
+    {
+      "rolls": {
+        "min": 0,
+        "max": 2
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "underthestars:chocolate_bar"
+        }
+      ]
     }
   ],
   "random_sequence": "underthestars:chests/campsite"
